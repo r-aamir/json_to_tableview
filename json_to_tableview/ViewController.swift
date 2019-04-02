@@ -63,4 +63,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = self.dataSource[indexPath.row]
+        let userVC = UserViewController(user: user)
+        self.navigationController?.pushViewController(userVC, animated: true)
+    }
 }
